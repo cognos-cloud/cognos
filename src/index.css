@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  background: #080808;
+  overflow-x: hidden;
+}
+
+body {
+  overscroll-behavior-x: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #080808;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .desktop-video-demo {
+    display: none !important;
+  }
+
+  .mobile-demo-card {
+    display: block !important;
+  }
+}
+
+/* ── Animations ─────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Syntax highlight colors (used in dangerouslySetInnerHTML) ───── */
+
+.syn-kw  { color: #c678dd; }
+.syn-cls { color: #61afef; }
+.syn-str { color: #98c379; }
+.syn-num { color: #d19a66; }
+.syn-cmt { color: #5c6370; font-style: italic; }
+.syn-fn  { color: #e5c07b; }
+
+/* ── Scrollbar styling for terminal/log panes ────────────────────── */
+
+.scroll-dark::-webkit-scrollbar        { width: 4px; height: 4px; }
+.scroll-dark::-webkit-scrollbar-track  { background: transparent; }
+.scroll-dark::-webkit-scrollbar-thumb  { background: rgba(255,255,255,0.08); border-radius: 9999px; }
+.scroll-dark::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
