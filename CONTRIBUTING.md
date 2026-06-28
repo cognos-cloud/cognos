@@ -2,7 +2,7 @@
 
 Thanks for your interest. We're in early development — the best way to contribute right now is to:
 
-1. **Request access** — [cloud.cognos.ai](https://cloud.cognos.ai) — deploy an agent and tell us what breaks
+1. **Request access** — [cognoscloud.xyz](https://cognoscloud.xyz) — deploy an agent and tell us what breaks
 2. **Open issues** — bugs, missing features, confusing docs
 3. **Share examples** — if you build an agent, add it to `/examples`
 

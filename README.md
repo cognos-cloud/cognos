@@ -65,8 +65,8 @@ After deploy:
 
 Agent deployed.
 
-Dashboard  https://cloud.cognos.ai/agents/research-agent
-API        POST https://api.cognos.ai/v1/agents/research-agent/run
+Dashboard  https://cognoscloud.xyz/agents/research-agent
+API        POST https://api.cognoscloud.xyz/v1/agents/research-agent/run
 Status     Running
 ```
 
@@ -84,60 +84,20 @@ Three ready-to-deploy agents in [`/examples`](./examples):
 
 ---
 
-## Repository Structure
+## GitHub Repository Structure
 
-```
-cognos-cloud/
-├── README.md
-│
-├── sdk/                    # Python SDK
-│   ├── cognos/
-│   │   ├── __init__.py
-│   │   ├── agent.py        # Agent class
-│   │   ├── tool.py         # @tool decorator
-│   │   ├── memory.py       # Memory client
-│   │   ├── policy.py       # Policy config
-│   │   └── client.py       # API client
-│   ├── pyproject.toml
-│   └── README.md
-│
-├── cli/                    # CLI (cognos deploy, logs, etc.)
-│   ├── cognos_cli/
-│   │   ├── __init__.py
-│   │   ├── main.py
-│   │   ├── commands/
-│   │   │   ├── deploy.py
-│   │   │   ├── logs.py
-│   │   │   ├── dev.py
-│   │   │   └── monitor.py
-│   │   └── config.py
-│   ├── pyproject.toml
-│   └── README.md
-│
-├── runtime/                # Agent runtime engine
-│   ├── runtime/
-│   │   ├── executor.py     # Agent execution loop
-│   │   ├── scheduler.py    # Cron + webhook scheduling
-│   │   ├── restart.py      # Auto-restart policy
-│   │   └── api.py          # REST API exposure
-│   ├── Dockerfile
-│   └── README.md
-│
-├── examples/               # Ready-to-deploy example agents
-│   ├── research-agent/
-│   ├── github-agent/
-│   └── crypto-agent/
-│
-└── docs/                   # Documentation
-    ├── getting-started.md
-    ├── sdk.md
-    ├── cli.md
-    ├── runtime.md
-    ├── memory.md
-    ├── observe.md
-    ├── tools.md
-    └── api-reference.md
-```
+See [`GITHUB_REPOS.md`](./GITHUB_REPOS.md) for the publish order and repository split.
+
+| Repo | Language | Purpose |
+|---|---:|---|
+| [`cognos`](https://github.com/cognos-cloud/cognos) | TypeScript | Main repo: website, dashboard UI, docs site, product demos |
+| [`cognos-runtime`](https://github.com/cognos-cloud/cognos-runtime) | Python | Core runtime: deploy, run, restart, API endpoint, logs, execution timeline |
+| [`cognos-sdk`](https://github.com/cognos-cloud/cognos-sdk) | Python | Python SDK: `Agent`, `tool`, memory, policy primitives |
+| [`cognos-cli`](https://github.com/cognos-cloud/cognos-cli) | Python | CLI: `cognos init`, `cognos dev`, `cognos deploy`, `cognos logs`, `cognos monitor` |
+| [`cognos-examples`](https://github.com/cognos-cloud/cognos-examples) | Python | Example agents: research, GitHub reviewer, crypto monitor |
+| [`cognos-docs`](https://github.com/cognos-cloud/cognos-docs) | — | Documentation, guides, API reference, roadmap |
+
+This repo mirrors the intended split. Move each folder into its own GitHub repository when you're ready to publish.
 
 ---
 
@@ -156,10 +116,10 @@ cognos-cloud/
 
 ## Links
 
-- **Website:** [cloud.cognos.ai](https://cloud.cognos.ai)
-- **Docs:** [cloud.cognos.ai/docs](https://cloud.cognos.ai/docs)
+- **Website:** [cognoscloud.xyz](https://cognoscloud.xyz)
+- **Docs:** [cognoscloud.xyz/docs](https://cognoscloud.xyz/docs)
 - **X:** [@CognosCloud](https://x.com/CognosCloud)
-- **Request access:** [cloud.cognos.ai/#signup](https://cloud.cognos.ai)
+- **Request access:** [cognoscloud.xyz/#signup](https://cognoscloud.xyz)
 
 ---
 
