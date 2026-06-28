@@ -427,8 +427,8 @@ agent.deploy()`} />
 
 ● Agent deployed successfully
 
-Dashboard   https://cloud.cognos.ai/agents/research-agent
-API         POST https://api.cognos.ai/v1/agents/research-agent/run
+Dashboard   https://cognoscloud.xyz/agents/research-agent
+API         POST https://api.cognoscloud.xyz/v1/agents/research-agent/run
 Status      Running`} />
               </Sub>
 
@@ -504,7 +504,7 @@ agent.deploy()`} />
 
               <Sub title="Deploy it">
                 <Code lang="bash" code={`cognos deploy
-# Dashboard: https://cloud.cognos.ai/agents/research-agent`} />
+# Dashboard: https://cognoscloud.xyz/agents/research-agent`} />
               </Sub>
 
               <Sub title="Execution trace">
@@ -590,7 +590,7 @@ agent.deploy()`} />
               <Sub title="Configure the webhook">
                 <P>After deploy, your agent gets a live URL. Add it to GitHub:</P>
                 <Code lang="bash" code={`# Settings → Webhooks → Add webhook
-Payload URL:  https://api.cognos.ai/v1/agents/github-agent/webhook/github
+Payload URL:  https://api.cognoscloud.xyz/v1/agents/github-agent/webhook/github
 Content type: application/json
 Events:       Pull requests, Issues`} />
               </Sub>
@@ -690,7 +690,7 @@ agent.deploy()`} />
 
               <Sub title="Add more wallets at runtime">
                 <Code lang="bash" code={`# Trigger the agent with a new wallet to monitor
-curl -X POST https://api.cognos.ai/v1/agents/crypto-agent/run \\
+curl -X POST https://api.cognoscloud.xyz/v1/agents/crypto-agent/run \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -d '{"input": "Add wallet 0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B to monitoring"}'`} />
               </Sub>
@@ -911,7 +911,7 @@ agent = Agent(
 
             {/* Dashboard */}
             <Section id="dashboard" title="Dashboard" badge="live">
-              <P>Every deployed agent gets a live dashboard at <InlineCode>{"cloud.cognos.ai/agents/{name}"}</InlineCode>. No setup required.</P>
+              <P>Every deployed agent gets a live dashboard at <InlineCode>{"cognoscloud.xyz/agents/{name}"}</InlineCode>. No setup required.</P>
               <Sub title="What's included">
                 <div className="rounded-xl border border-white/[0.07] overflow-hidden bg-[#0d0d0d]">
                   <FeatureRow label="Live execution logs (streaming)"  available={true} />
@@ -929,7 +929,7 @@ agent = Agent(
             <Section id="api-ref" title="API Reference" badge="live">
               <P>Every agent exposes a REST API endpoint automatically on deploy.</P>
               <Sub title="Run an agent">
-                <Code lang="bash" code={`curl -X POST https://api.cognos.ai/v1/agents/research-agent/run \\
+                <Code lang="bash" code={`curl -X POST https://api.cognoscloud.xyz/v1/agents/research-agent/run \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{"input": "Research the latest AI safety papers"}'`} />
@@ -945,33 +945,63 @@ agent = Agent(
 }`} />
               </Sub>
               <Sub title="Base URL">
-                <P><InlineCode>https://api.cognos.ai/v1</InlineCode></P>
+                <P><InlineCode>https://api.cognoscloud.xyz/v1</InlineCode></P>
                 <P>All requests require <InlineCode>Authorization: Bearer YOUR_API_KEY</InlineCode>. Generate keys from the dashboard.</P>
               </Sub>
             </Section>
 
             {/* Roadmap */}
             <Section id="roadmap" title="Roadmap">
-              <P>What exists today vs. what's coming. No fake checkmarks.</P>
-              <div className="space-y-2 my-4">
+              <P>Built in public. Available Today means the feature genuinely works. Future features are never marked as live.</P>
+              <div className="space-y-5 my-4">
                 {[
-                  { label: "Runtime",     status: "live" as const,        detail: "Deploy, run, restart, schedule, webhooks, API endpoint" },
-                  { label: "Tools",       status: "live" as const,        detail: "GitHub, Slack, Discord, PostgreSQL, Notion, Gmail, Stripe, Solana, Ethereum" },
-                  { label: "Dashboard",   status: "live" as const,        detail: "Logs, CPU, latency, cost, memory stats" },
-                  { label: "CLI",         status: "live" as const,        detail: "init, deploy, dev, logs, monitor, rollback" },
-                  { label: "Memory",      status: "coming-soon" as const, detail: "Conversation history live, vector search and namespaces coming" },
-                  { label: "Observe",     status: "coming-soon" as const, detail: "Live logs live now, full trace explorer coming" },
-                  { label: "Workflow",    status: "coming-soon" as const, detail: "Multi-agent pipelines, durable workflows, human-in-the-loop" },
-                  { label: "Policy",      status: "coming-soon" as const, detail: "Spending limits, RBAC, approval gates" },
-                  { label: "Marketplace", status: "planned" as const,     detail: "Community tools and templates" },
-                  { label: "Enterprise",  status: "planned" as const,     detail: "Team workspaces, SSO, SLA, dedicated infra" },
-                ].map((row) => (
-                  <div key={row.label} className="flex items-start gap-4 p-4 border border-white/[0.06] rounded-xl bg-[#0d0d0d]">
-                    <StatusBadge variant={row.status} />
-                    <div>
-                      <p className="text-white font-semibold text-[14px]">{row.label}</p>
-                      <p className="text-zinc-500 text-[13px] mt-0.5">{row.detail}</p>
+                  {
+                    title: "Available Today (v0.1)",
+                    status: "live" as const,
+                    summary: "Runtime: deploy agents, invoke them via API, and monitor execution.",
+                    items: [
+                      "Agent deployment from the CLI",
+                      "Runtime management: start, stop, restart",
+                      "Live logs streamed in real time",
+                      "Execution timeline",
+                      "REST API endpoint",
+                      "Persistent memory across runs",
+                    ],
+                  },
+                  {
+                    title: "In Progress (v0.2)",
+                    status: "coming-soon" as const,
+                    summary: "Scheduling & Tools: cron jobs, secrets, custom tools, and deployment history.",
+                    items: [
+                      "Scheduled agents (cron jobs)",
+                      "Tool SDK for custom integrations",
+                      "Environment variables and secrets",
+                      "Deployment history and rollback",
+                      "Usage metrics",
+                    ],
+                  },
+                  {
+                    title: "Planned (v0.3+)",
+                    status: "planned" as const,
+                    summary: "Multi-agent workflows and Cognos Cloud: shared memory, teams, marketplace, and enterprise deployment.",
+                    items: [
+                      "Multi-agent workflows",
+                      "Shared memory between agents",
+                      "Team workspaces",
+                      "RBAC and permissions",
+                      "Hosted cloud platform",
+                      "Marketplace for tools and agent templates",
+                      "Enterprise self-hosting",
+                    ],
+                  },
+                ].map((group) => (
+                  <div key={group.title} className="border border-white/[0.06] rounded-xl bg-[#0d0d0d] p-5">
+                    <div className="flex items-center gap-3 mb-2">
+                      <StatusBadge variant={group.status} />
+                      <p className="text-white font-semibold text-[15px]">{group.title}</p>
                     </div>
+                    <p className="text-zinc-500 text-[13px] leading-6 mb-4">{group.summary}</p>
+                    <UL items={group.items} />
                   </div>
                 ))}
               </div>

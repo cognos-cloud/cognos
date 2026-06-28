@@ -190,7 +190,7 @@ function HeroTerminal() {
     { type: "success", text: "✓  Agent deployed." },
     { type: "blank",   text: "" },
     { type: "label",   text: "Dashboard:" },
-    { type: "url",     text: "cloud.cognos.ai/agents/research-agent" },
+    { type: "url",     text: "cognoscloud.xyz/agents/research-agent" },
   ];
 
   return (
@@ -1146,30 +1146,48 @@ function Positioning() {
 // ─── Roadmap ─────────────────────────────────────────────────────────────
 
 function Roadmap() {
-  const phases = [
+  const columns = [
     {
-      when: "Today · 2026",
-      label: "Runtime",
-      items: ["Deploy any agent", "Auto-restart on failure", "Cron scheduling", "Live API endpoint", "Dashboard + logs"],
-      status: "current",
+      eyebrow: "Available Today",
+      version: "v0.1 — Runtime",
+      title: "Deploy agents, invoke them via API, and monitor execution.",
+      status: "available",
+      items: [
+        "Agent deployment from the CLI",
+        "Runtime management: start, stop, restart",
+        "Live execution logs",
+        "Execution timeline",
+        "REST API endpoint",
+        "Persistent memory across runs",
+      ],
     },
     {
-      when: "Q2 2026",
-      label: "Memory",
-      items: ["Persistent vector memory", "Long-term context", "User memory", "Execution history"],
-      status: "next",
+      eyebrow: "In Progress",
+      version: "v0.2 — Scheduling & Tools",
+      title: "Cron jobs, secrets, custom tools, and deployment history.",
+      status: "progress",
+      items: [
+        "Scheduled agents (cron jobs)",
+        "Tool SDK for custom integrations",
+        "Environment variables and secrets",
+        "Deployment history and rollback",
+        "Usage metrics",
+      ],
     },
     {
-      when: "Q3 2026",
-      label: "Workflows",
-      items: ["Multi-agent pipelines", "Durable workflows", "Human-in-the-loop", "Shared memory"],
+      eyebrow: "Planned",
+      version: "v0.3+ — Multi-Agent Workflows / v1.0 — Cognos Cloud",
+      title: "Shared memory, orchestration, teams, marketplace, and enterprise deployment.",
       status: "planned",
-    },
-    {
-      when: "Q4 2026",
-      label: "Cloud Platform",
-      items: ["Team workspaces", "Enterprise RBAC", "Marketplace", "SLA + billing"],
-      status: "planned",
+      items: [
+        "Multi-agent workflows",
+        "Shared memory between agents",
+        "Team workspaces",
+        "RBAC and permissions",
+        "Hosted cloud platform",
+        "Marketplace for tools and templates",
+        "Enterprise self-hosting",
+      ],
     },
   ];
 
@@ -1181,46 +1199,47 @@ function Roadmap() {
             Roadmap
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-            One thing first. Done right.
+            Built in public.
           </h2>
           <p className="text-zinc-500 text-base leading-relaxed">
-            We're not building six products at once. Runtime is the foundation everything else sits on — and it has to be bulletproof.
+            From one-command deploy to a full agent platform. Cognos starts with a production runtime for autonomous AI agents. Everything else builds on that foundation.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {phases.map((phase) => (
+        <div className="grid md:grid-cols-3 gap-5">
+          {columns.map((phase) => (
             <div
-              key={phase.label}
+              key={phase.eyebrow}
               className={cn(
-                "border rounded-2xl p-6 transition-all",
-                phase.status === "current"
-                  ? "border-white/20 bg-white/[0.04]"
-                  : "border-white/[0.06] bg-white/[0.01]"
+                "border rounded-2xl p-6 transition-all bg-white/[0.01]",
+                phase.status === "available" && "border-emerald-400/20 bg-emerald-400/[0.03]",
+                phase.status === "progress" && "border-sky-400/20 bg-sky-400/[0.025]",
+                phase.status === "planned" && "border-white/[0.06]"
               )}
             >
               <div className="flex items-center gap-2 mb-4">
                 <span
                   className={cn(
                     "text-[11px] font-semibold px-2.5 py-0.5 rounded-full border",
-                    phase.status === "current"
+                    phase.status === "available"
                       ? "text-emerald-400 border-emerald-400/30 bg-emerald-400/[0.08]"
-                      : phase.status === "next"
-                      ? "text-blue-400 border-blue-400/30 bg-blue-400/[0.06]"
+                      : phase.status === "progress"
+                      ? "text-sky-400 border-sky-400/30 bg-sky-400/[0.06]"
                       : "text-zinc-500 border-zinc-700 bg-white/[0.02]"
                   )}
                 >
-                  {phase.when}
+                  {phase.eyebrow}
                 </span>
               </div>
-              <h3 className="text-white font-bold text-lg mb-4">{phase.label}</h3>
+              <h3 className="text-white font-bold text-lg mb-2">{phase.version}</h3>
+              <p className="text-zinc-500 text-sm leading-6 mb-5">{phase.title}</p>
               <ul className="space-y-2">
                 {phase.items.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <span
                       className={cn(
                         "w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5",
-                        phase.status === "current" ? "bg-emerald-400" : "bg-zinc-700"
+                        phase.status === "available" ? "bg-emerald-400" : phase.status === "progress" ? "bg-sky-400" : "bg-zinc-700"
                       )}
                     />
                     <span className="text-zinc-400 text-sm leading-5">{item}</span>
@@ -1232,7 +1251,7 @@ function Roadmap() {
         </div>
 
         <p className="mt-8 text-zinc-700 text-sm">
-          * This is where we actually are. No fake checkmarks.
+          Never marked as shipped unless it actually works.
         </p>
       </div>
     </section>
@@ -1356,6 +1375,18 @@ function Footer({ onDocs, onSignup, onAdmin }: { onDocs: () => void; onSignup: (
             Docs
           </button>
           <button
+            onClick={() => window.dispatchEvent(new CustomEvent("cognos-open-legal", { detail: "privacy" }))}
+            className="text-zinc-700 hover:text-zinc-400 text-sm transition-colors"
+          >
+            Privacy
+          </button>
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("cognos-open-legal", { detail: "terms" }))}
+            className="text-zinc-700 hover:text-zinc-400 text-sm transition-colors"
+          >
+            Terms
+          </button>
+          <button
             onClick={onAdmin}
             className="text-zinc-800 hover:text-zinc-500 text-sm transition-colors"
           >
@@ -1365,6 +1396,74 @@ function Footer({ onDocs, onSignup, onAdmin }: { onDocs: () => void; onSignup: (
         <p className="text-zinc-800 text-xs">© 2026 Cognos Cloud</p>
       </div>
     </footer>
+  );
+}
+
+// ─── Legal Pages ───────────────────────────────────────────────────────────
+
+function LegalPage({ type, onBack }: { type: "privacy" | "terms"; onBack: () => void }) {
+  const isPrivacy = type === "privacy";
+
+  return (
+    <div className="min-h-screen bg-[#080808] text-white">
+      <header className="h-[56px] border-b border-white/[0.06] flex items-center justify-between px-6">
+        <div className="flex items-center gap-3">
+          <button onClick={onBack} className="text-zinc-600 hover:text-white transition-colors">←</button>
+          <CognosLogo size={22} />
+          <span className="font-semibold">Cognos Cloud</span>
+        </div>
+      </header>
+
+      <main className="max-w-2xl mx-auto px-6 py-12">
+        <p className="text-xs uppercase tracking-widest text-zinc-600 font-medium mb-3">
+          Legal
+        </p>
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+          {isPrivacy ? "Privacy Policy" : "Terms of Service"}
+        </h1>
+        <p className="text-zinc-600 text-sm mb-10">Last updated: 2026</p>
+
+        {isPrivacy ? (
+          <div className="space-y-8 text-zinc-400 text-sm leading-7">
+            <section>
+              <h2 className="text-white font-semibold mb-2">What we collect</h2>
+              <p>When you request access, we collect your name, email, role, use case, and submission timestamp. In the current prototype, access requests are stored locally in your browser unless connected to a backend.</p>
+            </section>
+            <section>
+              <h2 className="text-white font-semibold mb-2">How we use it</h2>
+              <p>We use access request information to contact developers, understand use cases, and prioritize onboarding. We do not sell personal information.</p>
+            </section>
+            <section>
+              <h2 className="text-white font-semibold mb-2">Product data</h2>
+              <p>Demo dashboard actions, API tester inputs, and execution logs shown on this website are simulated in the browser for demonstration purposes.</p>
+            </section>
+            <section>
+              <h2 className="text-white font-semibold mb-2">Contact</h2>
+              <p>Questions? Contact us on X at <a className="text-sky-400 hover:text-sky-300" href="https://x.com/CognosCloud" target="_blank" rel="noopener noreferrer">@CognosCloud</a>.</p>
+            </section>
+          </div>
+        ) : (
+          <div className="space-y-8 text-zinc-400 text-sm leading-7">
+            <section>
+              <h2 className="text-white font-semibold mb-2">Use of the service</h2>
+              <p>Cognos Cloud is currently an early product experience. You may use the website, demos, and examples to evaluate the product and request access.</p>
+            </section>
+            <section>
+              <h2 className="text-white font-semibold mb-2">No production guarantee yet</h2>
+              <p>Unless you have a separate agreement with us, the current beta is provided as-is with no uptime or availability guarantees.</p>
+            </section>
+            <section>
+              <h2 className="text-white font-semibold mb-2">Acceptable use</h2>
+              <p>Do not use Cognos Cloud for unlawful activity, spam, credential theft, unauthorized access, or harmful automated behavior.</p>
+            </section>
+            <section>
+              <h2 className="text-white font-semibold mb-2">Changes</h2>
+              <p>We may update these terms as the product evolves. Continued use means you accept the updated terms.</p>
+            </section>
+          </div>
+        )}
+      </main>
+    </div>
   );
 }
 
@@ -1486,7 +1585,7 @@ function DeploySection() {
 // ─── App ─────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [view, setView]         = useState<"landing" | "dashboard" | "docs" | "admin">(
+  const [view, setView]         = useState<"landing" | "dashboard" | "docs" | "admin" | "privacy" | "terms">(
     () => window.location.hash === "#admin" ? "admin" : "landing"
   );
   const [signupOpen, setSignup] = useState(false);
@@ -1500,9 +1599,20 @@ export default function App() {
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
 
+  useEffect(() => {
+    const openLegal = (event: Event) => {
+      const page = (event as CustomEvent<"privacy" | "terms">).detail;
+      if (page === "privacy" || page === "terms") setView(page);
+    };
+    window.addEventListener("cognos-open-legal", openLegal);
+    return () => window.removeEventListener("cognos-open-legal", openLegal);
+  }, []);
+
   if (view === "dashboard") return <Dashboard onBack={() => setView("landing")} />;
   if (view === "docs")      return <Docs onBack={() => setView("landing")} />;
   if (view === "admin")     return <AdminDashboard onBack={() => setView("landing")} />;
+  if (view === "privacy")   return <LegalPage type="privacy" onBack={() => setView("landing")} />;
+  if (view === "terms")     return <LegalPage type="terms" onBack={() => setView("landing")} />;
 
   return (
     <div className="bg-[#080808] min-h-screen text-white overflow-x-hidden">
