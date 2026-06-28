@@ -1344,56 +1344,58 @@ function XIcon() {
 
 function Footer({ onDocs, onSignup, onAdmin }: { onDocs: () => void; onSignup: () => void; onAdmin: () => void }) {
   return (
-    <footer className="border-t border-white/[0.06] py-10 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
-        <div className="flex items-center gap-2">
+    <footer className="border-t border-white/[0.06] py-10 px-4 sm:px-6 overflow-hidden">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8 sm:gap-5">
+        <div className="flex items-center justify-center sm:justify-start gap-2 min-w-0">
           <CognosLogo size={20} />
-          <span className="text-zinc-600 text-sm font-medium">Cognos Cloud</span>
-          <span className="text-zinc-800 text-sm">— The OS for autonomous AI agents</span>
+          <span className="text-zinc-500 text-sm font-medium">Cognos Cloud</span>
+          <span className="hidden md:inline text-zinc-800 text-sm">— The OS for autonomous AI agents</span>
         </div>
-        <div className="flex items-center gap-6">
+
+        <div className="grid grid-cols-2 gap-x-8 gap-y-3 sm:flex sm:items-center sm:gap-6 text-center sm:text-left">
           <a href="https://github.com/cognos-cloud" target="_blank" rel="noopener noreferrer"
-            className="text-zinc-700 hover:text-zinc-400 transition-colors flex items-center gap-1.5">
+            className="text-zinc-600 hover:text-zinc-300 transition-colors flex items-center justify-center sm:justify-start gap-1.5 py-1">
             <GitHubIcon />
             <span className="text-sm">GitHub</span>
           </a>
           <a href="https://x.com/CognosCloud" target="_blank" rel="noopener noreferrer"
-            className="text-zinc-700 hover:text-zinc-400 transition-colors flex items-center gap-1.5">
+            className="text-zinc-600 hover:text-zinc-300 transition-colors flex items-center justify-center sm:justify-start gap-1.5 py-1">
             <XIcon />
             <span className="text-sm">X</span>
           </a>
           <button
             onClick={onSignup}
-            className="text-zinc-700 hover:text-zinc-400 text-sm transition-colors"
+            className="text-zinc-600 hover:text-zinc-300 text-sm transition-colors py-1"
           >
             Request access
           </button>
           <button
             onClick={onDocs}
-            className="text-zinc-700 hover:text-zinc-400 text-sm transition-colors"
+            className="text-zinc-600 hover:text-zinc-300 text-sm transition-colors py-1"
           >
             Docs
           </button>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("cognos-open-legal", { detail: "privacy" }))}
-            className="text-zinc-700 hover:text-zinc-400 text-sm transition-colors"
+            className="text-zinc-600 hover:text-zinc-300 text-sm transition-colors py-1"
           >
             Privacy
           </button>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("cognos-open-legal", { detail: "terms" }))}
-            className="text-zinc-700 hover:text-zinc-400 text-sm transition-colors"
+            className="text-zinc-600 hover:text-zinc-300 text-sm transition-colors py-1"
           >
             Terms
           </button>
           <button
             onClick={onAdmin}
-            className="text-zinc-800 hover:text-zinc-500 text-sm transition-colors"
+            className="text-zinc-800 hover:text-zinc-500 text-sm transition-colors py-1 col-span-2 sm:col-span-1"
           >
             Admin
           </button>
         </div>
-        <p className="text-zinc-800 text-xs">© 2026 Cognos Cloud</p>
+
+        <p className="text-zinc-800 text-xs text-center sm:text-right">© 2026 Cognos Cloud</p>
       </div>
     </footer>
   );
