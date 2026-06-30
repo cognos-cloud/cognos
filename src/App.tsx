@@ -190,7 +190,7 @@ function HeroTerminal() {
     { type: "success", text: "✓  Agent deployed." },
     { type: "blank",   text: "" },
     { type: "label",   text: "Dashboard:" },
-    { type: "url",     text: "www.cognoscloud.xyz/agents/research-agent" },
+    { type: "url",     text: "https://www.cognoscloud.xyz/agents/research-agent" },
   ];
 
   return (
@@ -1158,7 +1158,7 @@ function Roadmap() {
         "Live execution logs",
         "Execution timeline",
     { type: "label",   text: "Dashboard:" },
-    { type: "url",     text: "www.cognoscloud.xyz/agents/research-agent" },
+    { type: "url",     text: "https://www.cognoscloud.xyz/agents/research-agent" },
       ],
     },
     {

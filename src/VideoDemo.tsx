@@ -328,8 +328,8 @@ function Scene4Dashboard({ visible, elapsed }: { visible: boolean; elapsed: numb
           <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/[0.06] bg-[#090909]">
             <span className="w-3 h-3 rounded-full bg-[#ff5f57]"/><span className="w-3 h-3 rounded-full bg-[#ffbd2e]"/><span className="w-3 h-3 rounded-full bg-[#28c840]"/>
             <div className="flex-1 flex justify-center">
-              <div className="bg-black/40 border border-white/[0.06] rounded px-4 py-0.5">
-                <span className="font-mono text-[11px] text-zinc-500">www.cognoscloud.xyz/agents/research-agent</span>
+                <div className="bg-black/40 border border-white/[0.06] rounded px-4 py-0.5">
+                <span className="font-mono text-[11px] text-zinc-500">https://www.cognoscloud.xyz/agents/research-agent</span>
               </div>
             </div>
           </div>
