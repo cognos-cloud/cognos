@@ -66,7 +66,7 @@ After deploy:
 Agent deployed.
 
 Dashboard  https://www.cognoscloud.xyz/agents/research-agent
-API        POST https://api.cognos.ai/v1/agents/research-agent/run
+API        POST https://api.cognoscloud.xyz/v1/agents/research-agent/run
 Status     Running
 ```
 

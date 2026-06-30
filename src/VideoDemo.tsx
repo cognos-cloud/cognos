@@ -76,7 +76,7 @@ const DEPLOY_LINES: Array<{ text: string; gap: number; kind: "blank"|"label"|"ok
   { text: "  ● Agent deployed successfully",                                       gap: 340, kind: "success" },
   { text: "",                                                                      gap: 160, kind: "blank"   },
   { text: "  Dashboard   https://www.cognoscloud.xyz/agents/research-agent",           gap: 240, kind: "url"     },
-  { text: "  API         POST https://api.cognos.ai/v1/agents/research-agent/run", gap: 80,  kind: "url"     },
+  { text: "  API         POST https://api.cognoscloud.xyz/v1/agents/research-agent/run", gap: 80,  kind: "url"     },
   { text: "  Status      Running",                                                 gap: 60,  kind: "status"  },
 ];
 
@@ -358,7 +358,7 @@ function Scene4Dashboard({ visible, elapsed }: { visible: boolean; elapsed: numb
                 <div className="animate-fadeIn">
                   <p className="text-[9px] uppercase tracking-widest text-zinc-700 mb-1.5">Endpoint</p>
                   <p className="font-mono text-sky-400 text-[10px] break-all leading-[14px]">
-                    POST api.cognos.ai<br/>/v1/agents/<br/>research-agent/run
+                    POST api.cognoscloud.xyz<br/>/v1/agents/<br/>research-agent/run
                   </p>
                 </div>
               )}

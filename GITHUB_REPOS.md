@@ -23,4 +23,4 @@ Use this split when publishing the Cognos Cloud organization.
 ## Domain
 
 - Website: https://www.cognoscloud.xyz
-- API: https://api.cognos.ai/v1
+- API: https://api.cognoscloud.xyz/v1

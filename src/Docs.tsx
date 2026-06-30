@@ -428,7 +428,7 @@ agent.deploy()`} />
 ● Agent deployed successfully
 
 Dashboard   https://www.cognoscloud.xyz/agents/research-agent
-API         POST https://api.cognos.ai/v1/agents/research-agent/run
+API         POST https://api.cognoscloud.xyz/v1/agents/research-agent/run
 Status      Running`} />
               </Sub>
 
@@ -590,7 +590,7 @@ agent.deploy()`} />
               <Sub title="Configure the webhook">
                 <P>After deploy, your agent gets a live URL. Add it to GitHub:</P>
                 <Code lang="bash" code={`# Settings → Webhooks → Add webhook
-Payload URL:  https://api.cognos.ai/v1/agents/github-agent/webhook/github
+Payload URL:  https://api.cognoscloud.xyz/v1/agents/github-agent/webhook/github
 Content type: application/json
 Events:       Pull requests, Issues`} />
               </Sub>
@@ -690,7 +690,7 @@ agent.deploy()`} />
 
               <Sub title="Add more wallets at runtime">
                 <Code lang="bash" code={`# Trigger the agent with a new wallet to monitor
-curl -X POST https://api.cognos.ai/v1/agents/crypto-agent/run \\
+curl -X POST https://api.cognoscloud.xyz/v1/agents/crypto-agent/run \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -d '{"input": "Add wallet 0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B to monitoring"}'`} />
               </Sub>
@@ -929,7 +929,7 @@ agent = Agent(
             <Section id="api-ref" title="API Reference" badge="live">
               <P>Every agent exposes a REST API endpoint automatically on deploy.</P>
               <Sub title="Run an agent">
-                <Code lang="bash" code={`curl -X POST https://api.cognos.ai/v1/agents/research-agent/run \\
+                <Code lang="bash" code={`curl -X POST https://api.cognoscloud.xyz/v1/agents/research-agent/run \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{"input": "Research the latest AI safety papers"}'`} />
@@ -945,7 +945,7 @@ agent = Agent(
 }`} />
               </Sub>
               <Sub title="Base URL">
-                <P><InlineCode>https://api.cognos.ai/v1</InlineCode></P>
+                <P><InlineCode>https://api.cognoscloud.xyz/v1</InlineCode></P>
                 <P>All requests require <InlineCode>Authorization: Bearer YOUR_API_KEY</InlineCode>. Generate keys from the dashboard.</P>
               </Sub>
             </Section>
