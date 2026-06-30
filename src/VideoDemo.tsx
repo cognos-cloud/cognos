@@ -75,8 +75,8 @@ const DEPLOY_LINES: Array<{ text: string; gap: number; kind: "blank"|"label"|"ok
   { text: "",                                                                      gap: 200, kind: "blank"   },
   { text: "  ● Agent deployed successfully",                                       gap: 340, kind: "success" },
   { text: "",                                                                      gap: 160, kind: "blank"   },
-  { text: "  Dashboard   https://cognoscloud.xyz/agents/research-agent",           gap: 240, kind: "url"     },
-  { text: "  API         POST https://api.cognoscloud.xyz/v1/agents/research-agent/run", gap: 80,  kind: "url"     },
+  { text: "  Dashboard   https://www.cognoscloud.xyz/agents/research-agent",           gap: 240, kind: "url"     },
+  { text: "  API         POST https://api.cognos.ai/v1/agents/research-agent/run", gap: 80,  kind: "url"     },
   { text: "  Status      Running",                                                 gap: 60,  kind: "status"  },
 ];
 
@@ -329,7 +329,7 @@ function Scene4Dashboard({ visible, elapsed }: { visible: boolean; elapsed: numb
             <span className="w-3 h-3 rounded-full bg-[#ff5f57]"/><span className="w-3 h-3 rounded-full bg-[#ffbd2e]"/><span className="w-3 h-3 rounded-full bg-[#28c840]"/>
             <div className="flex-1 flex justify-center">
               <div className="bg-black/40 border border-white/[0.06] rounded px-4 py-0.5">
-                <span className="font-mono text-[11px] text-zinc-500">cognoscloud.xyz/agents/research-agent</span>
+                <span className="font-mono text-[11px] text-zinc-500">www.cognoscloud.xyz/agents/research-agent</span>
               </div>
             </div>
           </div>
@@ -511,7 +511,7 @@ function Scene5Outro({ visible }: { visible: boolean }) {
         <p className="text-zinc-400 text-base sm:text-lg">The operating system for autonomous AI agents.</p>
         <div className="mt-6 flex items-center justify-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" style={{ animation:"blink 1.4s ease-in-out infinite" }}/>
-          <span className="text-zinc-600 text-sm font-mono">cognoscloud.xyz</span>
+          <span className="text-zinc-600 text-sm font-mono">www.cognoscloud.xyz</span>
         </div>
       </div>
     </div>

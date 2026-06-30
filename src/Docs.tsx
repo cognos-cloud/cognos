@@ -427,8 +427,8 @@ agent.deploy()`} />
 
 ● Agent deployed successfully
 
-Dashboard   https://cognoscloud.xyz/agents/research-agent
-API         POST https://api.cognoscloud.xyz/v1/agents/research-agent/run
+Dashboard   https://www.cognoscloud.xyz/agents/research-agent
+API         POST https://api.cognos.ai/v1/agents/research-agent/run
 Status      Running`} />
               </Sub>
 
@@ -504,7 +504,7 @@ agent.deploy()`} />
 
               <Sub title="Deploy it">
                 <Code lang="bash" code={`cognos deploy
-# Dashboard: https://cognoscloud.xyz/agents/research-agent`} />
+# Dashboard: https://www.cognoscloud.xyz/agents/research-agent`} />
               </Sub>
 
               <Sub title="Execution trace">
@@ -911,7 +911,7 @@ agent = Agent(
 
             {/* Dashboard */}
             <Section id="dashboard" title="Dashboard" badge="live">
-              <P>Every deployed agent gets a live dashboard at <InlineCode>{"cognoscloud.xyz/agents/{name}"}</InlineCode>. No setup required.</P>
+              <P>Every deployed agent gets a live dashboard at <InlineCode>{"www.cognoscloud.xyz/agents/{name}"}</InlineCode>. No setup required.</P>
               <Sub title="What's included">
                 <div className="rounded-xl border border-white/[0.07] overflow-hidden bg-[#0d0d0d]">
                   <FeatureRow label="Live execution logs (streaming)"  available={true} />

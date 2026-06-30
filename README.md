@@ -65,8 +65,8 @@ After deploy:
 
 Agent deployed.
 
-Dashboard  https://cognoscloud.xyz/agents/research-agent
-API        POST https://api.cognoscloud.xyz/v1/agents/research-agent/run
+Dashboard  https://www.cognoscloud.xyz/agents/research-agent
+API        POST https://api.cognos.ai/v1/agents/research-agent/run
 Status     Running
 ```
 
@@ -116,10 +116,10 @@ This repo mirrors the intended split. Move each folder into its own GitHub repos
 
 ## Links
 
-- **Website:** [cognoscloud.xyz](https://cognoscloud.xyz)
-- **Docs:** [cognoscloud.xyz/docs](https://cognoscloud.xyz/docs)
+- **Website:** [www.cognoscloud.xyz](https://www.cognoscloud.xyz)
+- **Docs:** [www.cognoscloud.xyz/docs](https://www.cognoscloud.xyz/docs)
 - **X:** [@CognosCloud](https://x.com/CognosCloud)
-- **Request access:** [cognoscloud.xyz/#signup](https://cognoscloud.xyz)
+- **Request access:** [www.cognoscloud.xyz/#signup](https://www.cognoscloud.xyz)
 
 ---
 

@@ -190,7 +190,7 @@ function HeroTerminal() {
     { type: "success", text: "✓  Agent deployed." },
     { type: "blank",   text: "" },
     { type: "label",   text: "Dashboard:" },
-    { type: "url",     text: "cognoscloud.xyz/agents/research-agent" },
+    { type: "url",     text: "www.cognoscloud.xyz/agents/research-agent" },
   ];
 
   return (
@@ -1157,8 +1157,8 @@ function Roadmap() {
         "Runtime management: start, stop, restart",
         "Live execution logs",
         "Execution timeline",
-        "REST API endpoint",
-        "Persistent memory across runs",
+    { type: "label",   text: "Dashboard:" },
+    { type: "url",     text: "www.cognoscloud.xyz/agents/research-agent" },
       ],
     },
     {

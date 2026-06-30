@@ -166,8 +166,8 @@ const DEPLOY_SCRIPT = [
   { text: "",                                                                       gap: 180, k: "blank"   },
   { text: "  ● Agent deployed successfully",                                        gap: 340, k: "success" },
   { text: "",                                                                       gap: 140, k: "blank"   },
-  { text: "  Dashboard  https://cognoscloud.xyz/agents/research-agent",             gap: 220, k: "url"     },
-  { text: "  API        POST https://api.cognoscloud.xyz/v1/agents/research-agent/run",   gap: 70,  k: "url"     },
+  { text: "  Dashboard  https://www.cognoscloud.xyz/agents/research-agent",             gap: 220, k: "url"     },
+  { text: "  API        POST https://api.cognos.ai/v1/agents/research-agent/run",   gap: 70,  k: "url"     },
   { text: "  Status     Running",                                                   gap: 55,  k: "running" },
   { text: "",                                                                       gap: 70,  k: "blank"   },
 ] as const;
