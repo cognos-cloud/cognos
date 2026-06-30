@@ -1157,8 +1157,7 @@ function Roadmap() {
         "Runtime management: start, stop, restart",
         "Live execution logs",
         "Execution timeline",
-    { type: "label",   text: "Dashboard:" },
-    { type: "url",     text: "https://www.cognoscloud.xyz/agents/research-agent" },
+        "Dashboard: https://www.cognoscloud.xyz/agents/research-agent",
       ],
     },
     {
