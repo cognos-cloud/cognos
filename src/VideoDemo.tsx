@@ -358,7 +358,7 @@ function Scene4Dashboard({ visible, elapsed }: { visible: boolean; elapsed: numb
                 <div className="animate-fadeIn">
                   <p className="text-[9px] uppercase tracking-widest text-zinc-700 mb-1.5">Endpoint</p>
                   <p className="font-mono text-sky-400 text-[10px] break-all leading-[14px]">
-                    POST api.cognoscloud.xyz<br/>/v1/agents/<br/>research-agent/run
+                    POST api.cognos.ai<br/>/v1/agents/<br/>research-agent/run
                   </p>
                 </div>
               )}

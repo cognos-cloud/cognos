@@ -696,10 +696,10 @@ export default function Dashboard({ onBack }: { onBack: () => void }) {
               <p className="text-[9px] uppercase tracking-widest text-zinc-700 mb-2">Endpoint</p>
               <div className="rounded-lg bg-black/50 border border-white/[0.06] p-3 space-y-2">
                 <p className="text-sky-400 font-mono text-[10px] break-all leading-[15px]">
-                  POST api.cognoscloud.xyz<br/>/v1/agents/<br/>research-agent/run
+                  POST api.cognos.ai<br/>/v1/agents/<br/>research-agent/run
                 </p>
                 <button onClick={() => {
-                  navigator.clipboard.writeText("https://api.cognoscloud.xyz/v1/agents/research-agent/run");
+                  navigator.clipboard.writeText("https://api.cognos.ai/v1/agents/research-agent/run");
                   setCopied(true); setTimeout(() => setCopied(false), 1500);
                 }} className="flex items-center gap-1 text-[10px] text-zinc-600 hover:text-zinc-300 transition-colors">
                   {copied

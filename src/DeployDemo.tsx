@@ -64,6 +64,9 @@ function buildScript(): TermLine[] {
     { type: "url",     text: "  Status       Running",                                  gap: 60 },
     { type: "url",     text: "  Memory       Attached (vector, 1.2 GB)",                gap: 60 },
     { type: "blank",   text: "",                                                        gap: 80 },
+      { type: "url",     text: "  API          POST https://api.cognos.ai/v1/agents/research-agent/run", gap: 80 },
+      { type: "url",     text: "  Status       Running",                                  gap: 60 },
+      { type: "url",     text: "  Memory       Attached (vector, 1.2 GB)",                gap: 60 },
   ];
 
   let cum = 0;
@@ -258,8 +261,8 @@ function LiveDashboard({ visible }: { visible: boolean }) {
         {/* API */}
         <div className="bg-white/[0.03] border border-white/[0.05] rounded-lg px-3 py-2">
           <p className="text-[9px] text-zinc-600 mb-1 uppercase tracking-wider">API Endpoint</p>
-          <p className="text-sky-400 font-mono text-[10px] truncate">
-            POST api.cognoscloud.xyz/v1/agents/research-agent/run
+            <p className="text-sky-400 font-mono text-[10px] truncate">
+            POST api.cognos.ai/v1/agents/research-agent/run
           </p>
         </div>
 
