@@ -1352,11 +1352,17 @@ function Footer({ onDocs, onSignup, onAdmin }: { onDocs: () => void; onSignup: (
         </div>
 
         <div className="grid grid-cols-2 gap-x-8 gap-y-3 sm:flex sm:items-center sm:gap-6 text-center sm:text-left">
-          <a href="https://github.com/cognos-cloud" target="_blank" rel="noopener noreferrer"
-            className="text-zinc-600 hover:text-zinc-300 transition-colors flex items-center justify-center sm:justify-start gap-1.5 py-1">
-            <GitHubIcon />
-            <span className="text-sm">GitHub</span>
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3">
+            <a href="https://github.com/cognos-cloud" target="_blank" rel="noopener noreferrer"
+              className="text-zinc-600 hover:text-zinc-300 transition-colors flex items-center justify-center sm:justify-start gap-1.5 py-1">
+              <GitHubIcon />
+              <span className="text-sm">GitHub</span>
+            </a>
+            <a href="https://orynth.dev/projects/cognos-cloud" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center py-1">
+              <img src="https://orynth.dev/api/badge/cognos-cloud?theme=dark&style=default" alt="Featured on Orynth" width="160" height="50" />
+            </a>
+          </div>
           <a href="https://x.com/CognosCloud" target="_blank" rel="noopener noreferrer"
             className="text-zinc-600 hover:text-zinc-300 transition-colors flex items-center justify-center sm:justify-start gap-1.5 py-1">
             <XIcon />

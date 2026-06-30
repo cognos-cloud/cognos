@@ -1,5 +1,9 @@
 # Cognos Cloud
 
+[GitHub](https://github.com/cognos-cloud/cognos) <a href="https://orynth.dev/projects/cognos-cloud" target="_blank" rel="noopener">
+  <img src="https://orynth.dev/api/badge/cognos-cloud?theme=dark&style=default" alt="Featured on Orynth" width="260" height="80" />
+</a>
+
 **The cloud operating system for autonomous AI agents.**
 
 Deploy production-ready AI agents in minutes. Cognos Cloud gives every agent memory, observability, scheduling, retries, and a live API — the moment you run `cognos deploy`.
